@@ -36,20 +36,21 @@ int main(){
         }
 
         //tworzenie pliku wynikow
+        // dodany fragment:
         ofstream wyniki;
         wyniki.open("zad_5.txt");
+        for(int j=0; j<MAX; j++){
+            int x=(int) sqrt(tab[j]);
+            if (x*x==tab[j])
+                if (pierwsza(x))
+                    cout<<tab[j]<<endl;
+        }
 
-        for(int i=0;i<MAX;i++){
-            if(pierwsza(tab[i])){
-                for(int j=0; j<MAX; j++){
-                    if(tab[i]*tab[i]==tab[j])
-                        wyniki<<tab[i]<<endl;
-                }
-            }
+        wyniki.close();
         }
 
     plik.close();
-    wyniki.close();
-    }
+
+
     return 0;
 }
