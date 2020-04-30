@@ -3,36 +3,6 @@
 #include <algorithm>
 using namespace std;
 
-string b_sort(string s){
-    int dl=s.size();
-
-    for (int i=0; i<dl; i++){
-        for(int j=i+1; j<dl; j++){
-            if(s[i]>s[j]){
-                char pom = s[i];
-                s[i]=s[j];
-                s[j]=pom;
-            }
-        }
-    }
-    return s;
-}
-
-string insert_sort(string s){
-    int dl=s.size();
-    for(int i=1;i<dl;){
-        char pom = s[i];
-        int j=i-1;
-        for(; j>=0 && s[j]>pom;){
-            s[j+1]=s[j];
-            j--;
-        }
-        s[j+1]=pom;
-        i++;
-        }
-    return s;
-
-}
 
 int main(){
     cout<<"Podaj ilosc wyrazow ktore chcesz uporzadkowac alfabetycznie"<<endl;
@@ -48,7 +18,8 @@ int main(){
     cin.ignore();
     string *slowo = new string [size];
     for(int i=0;i<size;i++){
-        getline(cin, slowo[i]);
+    //cin lepsze od getline jak masz wpisywac tylko jedno slowo!!
+        cin>>slowo[i];
     }
 
     for (int i=0; i<size; i++){

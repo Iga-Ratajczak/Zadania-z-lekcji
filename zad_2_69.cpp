@@ -3,7 +3,7 @@
 #include <algorithm>
 using namespace std;
 
-string b_sort(string s){
+string x_sort(string s){
     int dl=s.size();
 
     for (int i=0; i<dl; i++){
@@ -17,7 +17,20 @@ string b_sort(string s){
     }
     return s;
 }
+string b_sort (string s){
+    int dl=s.size();
 
+    for(int i=0; i<dl; i++){
+        for(int j=0; j<dl-1; j++){
+            if(s[j]>s[j+1]){
+                char pom = s[j];
+                s[j]=s[j+1];
+                s[j+1]=pom;
+            }
+        }
+    }
+    return s;
+}
 string insert_sort(string s){
     int dl=s.size();
     for(int i=1;i<dl;){
@@ -38,7 +51,8 @@ int main(){
     cout<<"Wpisz ciag malych liter."<<endl;
     string ciag;
     getline(cin,ciag);
-
+    ciag.erase(remove(ciag.begin(), ciag.end(), ' '), ciag.end());
+    cout<<"sorotwanie "<<x_sort(ciag)<<endl<<endl;
     cout<<"sorotwanie babelkowe "<<b_sort(ciag)<<endl;
     cout<<"sorotwanie przez wstawianie "<<insert_sort(ciag);
 
