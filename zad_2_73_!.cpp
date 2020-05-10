@@ -3,11 +3,12 @@
 #include <algorithm>
 using namespace std;
 
-void wypisz (int t[]){
-    for( int i=97;i<105; i++){
-        cout<<i<<"  "<<t[i]<<endl;
-    }
-}
+//do testow
+//void wypisz (int t[]){
+   // for( int i=97;i<105; i++){
+    //    cout<<i<<"  "<<t[i]<<endl;
+   // }
+//}
 
 void wypelnij (string s, int t[]){
     // zerowanie tablicy
@@ -20,7 +21,7 @@ void wypelnij (string s, int t[]){
     }
 }
 
-//sprawdzanie czy wyrazy sa angramami - jezeli wartosc wystepowania danej literynie jest rowna to falsz
+//sprawdzanie czy wyrazy sa angramami - jezeli wartosc wystepowania danej litery nie jest rowna to falsz
 bool tosamo (int t1[], int t2[]){
     for( int i=0; i<256; i++){
         if(t1[i]!=t2[i])
@@ -32,6 +33,7 @@ bool tosamo (int t1[], int t2[]){
 bool sprawdzanie (string slowo[], int n){
     int t1[256], t2[256];
 
+    //sprawdzanie czy kolejne slowa sa anagramami slowa pierwszego
     wypelnij(slowo[0], t1);
     for(int i=1; i<n; i++){
        wypelnij(slowo[i], t2);
