@@ -54,8 +54,10 @@ string alfabet_wlasciwy(string klucz2, string alfabet_jawny){
 }
 
 int main(){
-    string kryptogram = "ltnfcf hkcwht mkik cqlnt";
-    //string kryptogram = "dtubtgc";
+    //kryptogram z zadnia 2.88
+    //string kryptogram = "ltnfcf hkcwht mkik cqlnt";
+    string kryptogram = "dtubtgc";
+    //klucz z zadania 2.88
     //string klucz="kryptografia";
     string klucz="kryptografiaikryptoanaliza";
     string klucz2=wlasciwy_klucz(klucz);
@@ -68,7 +70,7 @@ int main(){
         for(int j=0; j<alfabet.size(); j++){
             if(kryptogram[i]==alfabet[j]){
                 wynik+=alfabet_jawny[j];
-                cout<<j<<endl;
+                //cout<<j<<endl;
             }
         }
     }

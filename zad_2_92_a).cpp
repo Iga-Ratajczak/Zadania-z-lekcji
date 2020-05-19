@@ -62,6 +62,7 @@ int main(){
     string wynik;
     int j=0;
     for(int i=0; i<tekst_jawny.size(); i++){
+        //tu chcialam wstawic petle
         //for(int j=0; j<dlK; j++){
             for(int k=0; k<dlA; k++){
                 if(tekst_jawny[i]==alfabet_podst[k]){
