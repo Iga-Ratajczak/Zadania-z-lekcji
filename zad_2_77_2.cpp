@@ -36,10 +36,13 @@ int main(){
     // program odklada na stos wszystkie cyfry z wpisanego wyrazu
     while(!plik.eof()){
         plik>>s[l];
+        //cout<<s[l]<<" ";
         l++;
+
     }
-    for(int i=0; i<size; i++){
-        //!nie dziala warunek
+    // nie dzialalo z size zamiast l
+    for(int i=0; i<l; i++){
+
         if ((int) s[i]>=48 && (int)s[i]<=57){
             //zeby przekonwertowac na liczbe w ascii -48
             int temp=s[i];
@@ -78,6 +81,8 @@ int main(){
 
     cout<<"Wynik dzialan to "<<wynik<<endl;
 
+    //nie zapisuje do pliku
+    plik<<endl<<wynik;
     plik.close();
     delete[] s;
     return 0;
