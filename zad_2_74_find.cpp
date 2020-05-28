@@ -3,6 +3,8 @@
 #include <algorithm>
 using namespace std;
 #define RANGE 255
+
+//nie prawdilowe brak wzorca w tekscie tylko sprawdza czy slowo napis jest osobne
 bool napis(string s, int &poz){
     string wzor="napis";
     int dlw = wzor.size();
@@ -37,9 +39,11 @@ int main(){
     string zdanie;
     getline(cin, zdanie);
     cout<<zdanie.size()<<endl;
+    string wzor="napis";
     int pozycja;
-
-    if(napis(zdanie, pozycja)==true)
+    pozycja=zdanie.find(wzor);
+    cout<<pozycja<<endl;
+    if(pozycja>=0)
         cout<<"slowo zaczyna sie na pozycji "<<pozycja<<endl;
     else
         cout<<"W danym ciagu nie ma slowa 'napis' "<<endl;

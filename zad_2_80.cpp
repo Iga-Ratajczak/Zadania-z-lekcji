@@ -17,18 +17,24 @@ string odszyfrowanie(string zaszyfrowany, int klucz[], int il_kolumn){
 
     //wpisanie do tablicy
     int n = 0;
-    for(int k=0; k<il_kolumn; k++){
-        int l=klucz[k];
-        for(int i=0; i<il_wierszy; i++){
-            if(n<dl){
-                tab[i][l]=zaszyfrowany[n];
-                n++;
+    for(int i=0; i<il_kolumn; i++){
+        int l=0;
+        for(int j=0; j<il_wierszy; j++){
+            if(klucz[i]<dl%il_kolumn){
+                if(l<dl%il_kolumn){
+                    tab[j][klucz[i]]=zaszyfrowany[n];
+                    n++;
+                    l++;
+                }
             }
-            else
-                tab[i][l]='\0';
-            //cout<<tab[i][l]<<"\t";
+            else{
+                if(l<dl%il_kolumn-1){
+                    tab[j][klucz[i]]=zaszyfrowany[n];
+                    n++;
+                    l++;
+                }
+            }
         }
-        //cout<<endl;
     }
 
     for(int i=0; i<il_wierszy; i++){

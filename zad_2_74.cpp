@@ -5,33 +5,23 @@ using namespace std;
 #define RANGE 255
 bool napis(string s, int &poz){
     int n=s.size();
+    string wzor="napis";
+    int dlw = wzor.size();
+    int temp=0;
+
     for(int i=0; i<n;i++ ){
-    //sprawdzanie czy pierwszy wyraz jest slowem napis
-        if(i==0 ){
-            if(s[i]=='n')
-                if(s[i+1]=='a')
-                    if(s[i+2]=='p')
-                        if(s[i+3]=='i')
-                            if(s[i+4]=='s')
-                                if(s[i+5]==' ' || i+4==n-1){
-                                    poz=i;
-                                    return true;
-                                }
+        if(s[i]=='n'){
+                for(int j=0; j<dlw; j++){
+                    if(s[i]!=wzor[j]){
+                        temp++;
+                    }
+                    i++;
+                }
+                if(temp==0){
+                    poz=s.find(wzor);
+                    return true;
+                }
             }
-
-    // sprawdzanie czy kolejne wyrazy sa slowem napis
-        if(s[i]==' '){
-             if(s[i+1]=='n')
-                if(s[i+2]=='a')
-                    if(s[i+3]=='p')
-                        if(s[i+4]=='i')
-                            if(s[i+5]=='s')
-                                if(s[i+6]==' ' || i+5==n-1){
-                                    poz=i+1;
-                                    return true;
-                                }
-        }
-
     }
 
     return false;
