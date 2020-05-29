@@ -18,15 +18,19 @@ int ZeStosu(){
     return stos[wie];
 }
 
+// empty
+bool PustyStos(){
+    if (wie==0) return true;
+    return false;
+}
 
 int main(){
     fstream plik;
-    plik.open("onp.txt");
+    // potrzebujesz ios in i out zeby byl do zapisu i odczytu jednoczesnie
+    plik.open("onp.txt", ios::in | ios::out | ios::app);
     int size=100;
-    //lepiej na stringu wtedy nie idziesz po znaku
     string s;
     int wynik;
-    //musi byc na charach
     char operatory[100];
     int n=0;
     int l=0;
@@ -38,10 +42,8 @@ int main(){
 
     }
     */
-    //tu zmiana
     plik>>s;
-
-
+    // nie dzialalo z size zamiast l
     for(int i=0; i<s.size(); i++){
 
         if ((int) s[i]>=48 && (int)s[i]<=57){
@@ -79,11 +81,13 @@ int main(){
             //}
         }
     }
-    plik.close();
-    ofstream plik2("onpwynik.txt");
+    //plik.close();
+    //fstream plik2("onpwynik.txt");
     cout<<"Wynik dzialan to "<<wynik<<endl;
-    plik2<<endl<<"ala "<<wynik;
-    plik2.close();
+
+    //nie zapisuje do pliku
+    plik<<endl<<"ala "<<wynik;
+    plik.close();
     //delete[] s;
     return 0;
 }
