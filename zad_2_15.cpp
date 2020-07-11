@@ -4,7 +4,7 @@
 using namespace std;
 
 int main(){
-    long liczba;
+    int liczba;
     int podstawa;
     cout<<"Podaj liczbe w systemie dziesietnym oraz podstawe systemu na kotry ma zostac przekonwertowana"<<endl;
     cin>>liczba>>podstawa;
